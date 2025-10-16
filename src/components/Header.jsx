@@ -32,11 +32,7 @@ export default function Header({ isDark, setIsDark }) {
   if (!mounted) return null;
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-700 backdrop-blur-3xl ${
-      isDark
-        ? 'bg-black/40 border-b border-white/10'
-        : 'bg-white/60 border-b border-gray-200/50'
-    }`}>
+    <header className={`fixed w-full top-0 z-50 transition-all duration-700 backdrop-blur-3xl`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -69,7 +65,11 @@ export default function Header({ isDark, setIsDark }) {
               <a
                 key={item.path}
                 href={item.path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                  isDark
+                    ? 'text-gray-300 hover:text-white hover:bg-white/10'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                }`}
               >
                 <item.icon className="w-4 h-4" />
                 {item.name}
@@ -178,5 +178,4 @@ export default function Header({ isDark, setIsDark }) {
       `}</style>
     </header>
   );
-
 }
