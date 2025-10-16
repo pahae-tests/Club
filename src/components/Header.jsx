@@ -69,11 +69,7 @@ export default function Header({ isDark, setIsDark }) {
               <a
                 key={item.path}
                 href={item.path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                  isDark
-                    ? 'text-gray-300 hover:text-white hover:bg-white/10'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300`}
               >
                 <item.icon className="w-4 h-4" />
                 {item.name}
@@ -182,4 +178,5 @@ export default function Header({ isDark, setIsDark }) {
       `}</style>
     </header>
   );
+
 }
